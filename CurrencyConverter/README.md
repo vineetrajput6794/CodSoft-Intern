@@ -1,54 +1,91 @@
-💱 Currency Converter using Java
+# 💱 Task 4: Currency Converter
 
-A Currency Converter application developed in Java that performs accurate, real-time currency conversions using a live Exchange Rate API. The project allows users to select a base currency and a target currency, enter an amount, and instantly receive the converted value based on the latest exchange rates.
+A Java console application that converts currency amounts in **real-time** using live exchange rates fetched from the **ExchangeRate-API** via HTTP requests and JSON parsing.
 
-Built with Object-Oriented Programming (OOP) principles, this project demonstrates practical Java development skills, including REST API integration, HTTP requests, JSON data parsing, exception handling, user input validation, and modular code architecture. It is an excellent beginner-to-intermediate project for learning how Java applications interact with external APIs while following clean coding practices.
+---
 
-✨ Features
-🌍 Select any base and target currency
-💰 Convert any amount using live exchange rates
-📡 Real-time exchange rate retrieval through an Exchange Rate API
-⚡ Fast and accurate currency conversion
-🛡️ Input validation and exception handling
-🧩 Clean, modular, and reusable Object-Oriented code
-📈 Easy to extend with additional features such as GUI, conversion history, or favorite currencies
-🛠️ Technologies Used
-Java
-IntelliJ IDEA
-REST API Integration
-HTTPURLConnection / Java HttpClient
-JSON Parsing
-Object-Oriented Programming (OOP)
-📚 Concepts Demonstrated
-Classes & Objects
-Encapsulation
-Methods
-Exception Handling
-API Consumption
-HTTP Requests & Responses
-JSON Processing
-User Input Handling
-Real-Time Data Fetching
-Clean Code Principles
-🎯 Project Workflow
-Select the base currency.
-Select the target currency.
-Enter the amount to convert.
-Fetch the latest exchange rate from the API.
-Calculate the converted value.
-Display the result with the selected target currency.
-🚀 Learning Outcomes
+## 📖 About the Project
 
-By completing this project, you will gain hands-on experience with:
+This Currency Converter application allows users to convert any amount between different world currencies. Unlike static converters, this app fetches **live exchange rates** from the [ExchangeRate-API](https://www.exchangerate-api.com/) at the time of conversion, ensuring accurate and up-to-date results. The app makes a REST API call, parses the JSON response, extracts the exchange rate, and calculates the converted amount.
 
-Core Java Programming
-Object-Oriented Programming (OOP)
-RESTful API Integration
-Working with JSON Data
-HTTP Communication
-Exception Handling
-Building Real-World Java Applications
-Writing Clean, Maintainable Code
-🌟 Why This Project?
+---
 
-This project showcases the ability to build a real-world Java application that integrates with external services, making it a valuable addition to a software developer portfolio. It highlights practical skills that are commonly required in internships and entry-level Java developer roles.
+## ✨ Key Features
+
+- **Live Exchange Rates** – Fetches real-time rates via the ExchangeRate-API (REST API integration).
+- **Multi-Currency Support** – Supports all major world currencies (USD, INR, AED, AUD, PKR, EUR, GBP, etc.).
+- **Dynamic Rate Extraction** – Parses the JSON API response to extract the exact rate for the chosen target currency.
+- **Accurate Conversion** – Calculates and displays the precise converted amount.
+- **Error Handling** – Catches HTTP errors and API failures with descriptive messages.
+- **Simple CLI Interface** – Easy-to-use prompts for base currency, target currency, and amount.
+
+---
+
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+|-----------|---------|
+| **Java** | Core programming language |
+| **HttpURLConnection** | Opens an HTTP GET connection to the exchange rate API |
+| **BufferedReader / InputStreamReader** | Reads the API response stream |
+| **org.json (JSON Library)** | Parses the JSON response to extract conversion rates |
+| **ExchangeRate-API v6** | Third-party REST API for live currency exchange rates |
+| **Java Scanner** | Console-based user input |
+
+---
+
+## 🏗️ Project Structure
+
+```
+CurrencyConverter/
+└── src/
+    └── currencyConverter.java   # Main class with API call, JSON parsing, and conversion logic
+```
+
+---
+
+## 🔑 API Details
+
+- **API Provider**: [ExchangeRate-API](https://www.exchangerate-api.com/)
+- **Endpoint**: `https://v6.exchangerate-api.com/v6/{API_KEY}/latest/{BASE_CURRENCY}`
+- **Response Format**: JSON with `conversion_rates` object containing target currency rates.
+
+---
+
+## 📦 Dependency Setup
+
+Add the **org.json** library to your project:
+
+**Maven:**
+```xml
+<dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20231013</version>
+</dependency>
+```
+
+**Manual:** Download `json-20231013.jar` and add it to your project classpath.
+
+---
+
+## ▶️ How to Run
+
+1. Open the project in **IntelliJ IDEA** or any Java IDE.
+2. Add the `org.json` library dependency (see above).
+3. Run the `currencyConverter` class.
+4. Enter the base currency, target currency, and amount when prompted.
+5. View the live exchange rate and converted amount.
+
+---
+
+## 📋 Sample Output
+
+```
+Enter Base Currency (e.g. USD, INR, AED, AUD, PKR): USD
+Enter Target Currency (e.g. USD, INR, AED, AUD, PKR): INR
+Enter Amount: 100
+
+Exchange Rate: 83.52
+100.0 USD = 8352.0 INR
+```
