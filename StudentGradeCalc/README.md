@@ -1,4 +1,4 @@
-# Task 2: Student Grade Calculator
+# Task 1: Student Grade Calculator
 
 A simple and interactive Java console application designed to calculate student grades based on marks obtained in various subjects.
 
