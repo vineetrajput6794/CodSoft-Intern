@@ -1,4 +1,4 @@
-# 💱 Task 4: Currency Converter
+# 💱 Task 1: Currency Converter
 
 A Java console application that converts currency amounts in **real-time** using live exchange rates fetched from the **ExchangeRate-API** via HTTP requests and JSON parsing.
 
